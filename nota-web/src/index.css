@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+/* =====================================================
+   NOTA DESIGN SYSTEM — Tailwind v4 CSS Theme
+   Exact values from Stitch design
+   ===================================================== */
+@theme {
+  /* Colors */
+  --color-surface: #FFF8F0;
+  --color-surface-variant: #F5ECE1;
+  --color-surface-card: #FFFFFF;
+  --color-primary: #4B2E2B;
+  --color-primary-hover: #36211F;
+  --color-secondary: #C08552;
+  --color-secondary-hover: #A66E3E;
+  --color-brown: #8C5A3C;
+  --color-espresso: #4B2E2B;
+  --color-outline: #D8C7B5;
+  --color-outline-variant: #E8DCC4;
+  --color-on-surface: #2C1B1A;
+  --color-on-surface-variant: #6E544F;
+  --color-terracotta: #C08552;
+  --color-error: #BA1A1A;
+
+  /* Fonts */
+  --font-family-headline: "Plus Jakarta Sans", sans-serif;
+  --font-family-display: "Plus Jakarta Sans", sans-serif;
+  --font-family-body: "Inter", sans-serif;
+  --font-family-label: "Public Sans", sans-serif;
+  --font-family-serif: "Playfair Display", serif;
+
+  /* Border Radius */
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 1.75rem;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 24px rgba(75, 46, 43, 0.08);
+  --shadow-card: 0 2px 12px rgba(75, 46, 43, 0.06);
+  --shadow-xl: 0 8px 40px rgba(75, 46, 43, 0.12);
+}
+
+/* =====================================================
+   GLOBAL BASE STYLES
+   ===================================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #FFF8F0;
+  color: #2C1B1A;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F5ECE1;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #D8C7B5;
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #C08552;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Subtle paper texture */
+.texture-wash {
+  background-color: #FFF8F0;
+  background-image: radial-gradient(rgba(192, 133, 82, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Pulse animation for synced indicator */
+.pulse-dot {
+  box-shadow: 0 0 0 0 rgba(192, 133, 82, 0.45);
+  animation: pulse-ring 2s infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0   rgba(192, 133, 82, 0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(192, 133, 82, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(192, 133, 82, 0); }
+}
+
+/* Score highlight for active measure */
+.measure-active {
+  background-color: rgba(192, 133, 82, 0.18) !important;
+  border-radius: 4px;
+  outline: 2px solid rgba(192, 133, 82, 0.6);
+  transition: all 0.25s ease;
+}
+
+/* Stave score lines */
+.stave-line {
+  height: 1px;
+  background-color: #2C1B1A;
+  opacity: 0.8;
+  width: 100%;
+}
+
+body.dark-theme { filter: invert(0.9) hue-rotate(180deg); background-color: #1a1a1a; }
+body.dark-theme img, body.dark-theme svg, body.dark-theme .nota-badge { filter: invert(1) hue-rotate(180deg); }
