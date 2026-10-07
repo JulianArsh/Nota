@@ -1,0 +1,27 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "nota-api": {
+      "root": "nota-api",
+      "framework": "express"
+    },
+    "nota-web": {
+      "root": "nota-web",
+      "framework": "vite"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "nota-api"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "nota-web"
+      }
+    }
+  ]
+}
